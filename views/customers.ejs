@@ -1,0 +1,34 @@
+<div>
+    <form method="POST" action="/customers">
+        <label for="customerName">Customer Display Name</label>
+        <input type="text" name="displayName" required />
+        <button type="submit">Create Customer</button>
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th><th>Display Name</th><th>SA Invoice</th><th>Tip Invoice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% customers.forEach(function(customer) { %>
+        <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.displayName %></td>
+            <% if (customer.saInvoiceId) { %>
+                <td><%= customer.saInvoiceId %></td>
+            <% } else { %>
+                <td><a href="/customers/<%=customer._id%>/createSAInvoice">Create</a></td>
+            <% } %>
+            <% if (customer.tipInvoiceId) { %>
+                <td><%= customer.tipInvoiceId %></td>
+            <% } else { %>
+                <td><a href="/customers/<%=customer._id%>/createTipInvoice">Create</a></td>
+            <% } %>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
