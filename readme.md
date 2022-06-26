@@ -1,4 +1,4 @@
-# Quickbooks Nodejs Example!
+# Quickbooks Nodejs SDK Example!
 
 In this repository I have tried to make a prototype project using Nodejs, Expressjs and ejs templates to explaining the usage of Quickbooks Online SDK packages for Nodejs.
 
